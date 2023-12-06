@@ -6,14 +6,18 @@ slug: /library/get-started/multipage-apps/create-a-multipage-app
 # Create a multipage app
 
 In the [last section](/library/get-started/multipage-apps), we learned what it takes to create multipage apps, including how to define pages, structure and run multipage apps, and navigate between pages in the user interface. If you need a refresher, now is a good time to take a look.
+在上一节中，我们了解了创建多页面应用程序所需的知识，包括如何定义页面、结构和运行多页面应用程序以及如何在用户界面中的页面之间导航。 如果您需要复习一下，现在是查看的好时机。
 
 In this guide, let’s put our understanding of multipage apps to use by converting the familiar `streamlit hello` command to a multipage app!
+在本指南中，让我们通过将熟悉的streamlit hello 命令转换为多页应用程序来运用我们对多页应用程序的理解！
 
 ## Motivation
 
 Before Streamlit 1.10.0, the streamlit hello command was a large single-page app. As there was no support for multiple pages, we resorted to splitting the app's content using `st.selectbox` in the sidebar to choose what content to run. The content is comprised of three demos for plotting, mapping, and dataframes.
+在 Streamlit 1.10.0 之前，streamlit hello 命令是一个大型单页应用程序。 由于不支持多个页面，我们只好使用侧边栏中的 st.selectbox 来分割应用程序的内容来选择要运行的内容。 内容由三个用于绘图、制图和数据帧的演示组成。
 
 Here's what the code and single-page app looked like:
+代码和单页应用程序如下所示：
 
 <details>
 <summary><b><code>hello.py</code></b>  (👈 Toggle to expand)</summary>
@@ -257,21 +261,33 @@ page_names_to_funcs[demo_name]()
 <Cloud src="https://doc-hello.streamlit.app/?embed=true" height="700" />
 
 Notice how large the file is! Each app “page" is written as a function, and the selectbox is used to pick which page to display. As our app grows, maintaining the code requires a lot of additional overhead. Moreover, we’re limited by the `st.selectbox` UI to choose which “page" to run, we cannot customize individual page titles with `st.set_page_config`, and we’re unable to navigate between pages using URLs.
+请注意该文件有多大！ 每个应用程序“页面”都被编写为一个函数，选择框用于选择要显示的页面。随着我们的应用程序的增长，维护代码需要大量额外的开销。此外，我们受到 st.selectbox UI 的限制 要选择要运行的“页面”，我们无法使用 st.set_page_config 自定义各个页面标题，并且无法使用 URL 在页面之间导航。
 
 ## Convert an existing app into a multipage app
 
 Now that we've identified the limitations of a single-page app, what can we do about it? Armed with our knowledge from the previous section, we can convert the existing app to be a multipage app, of course! At a high level, we need to perform the following steps:
+既然我们已经确定了单页应用程序的局限性，那么我们能做些什么呢？ 有了上一节的知识，我们当然可以将现有应用程序转换为多页应用程序！ 在较高层面上，我们需要执行以下步骤：
 
 1. Create a new `pages` folder in the same folder where the “entrypoint file" (`hello.py`) lives
+   在“入口点文件”（hello.py）所在的同一文件夹中创建一个新的页面文件夹
+
 2. Rename our entrypoint file to `Hello.py` , so that the title in the sidebar is capitalized
+   将我们的入口点文件重命名为 Hello.py ，以便侧栏中的标题大写
+
 3. Create three new files inside of `pages`:
+   在页面内创建三个新文件：
+
    - `pages/1_📈_Plotting_Demo.py`
    - `pages/2_🌍_Mapping_Demo.py`
    - `pages/3_📊_DataFrame_Demo.py`
 4. Move the contents of the `plotting_demo`, `mapping_demo`, and `data_frame_demo` functions into their corresponding new files from Step 3
+   将plotting_demo、mapping_demo 和data_frame_demo 函数的内容移至步骤 3 中相应的新文件中
+
 5. Run `streamlit run Hello.py` to view your newly converted multipage app!
+   运行streamlit run Hello.py来查看新转换的多页应用程序！
 
 Now, let’s walk through each step of the process and view the corresponding changes in code.
+现在，让我们逐步完成该过程的每个步骤并查看代码中相应的更改。
 
 ## Create the entrypoint file
 

@@ -10,8 +10,11 @@ slug: /library/get-started/installation
 ### Skip installation! Community Cloud + GitHub Codespaces
 
 Community Cloud now makes it easy to skip installation and start coding right in your browser with GitHub Codespaces. 🎉 Hop over to our Community Cloud [Quickstart](/streamlit-community-cloud/get-started/quickstart) to create an account, deploy an example app, and jump right into a codespace to start editing. Return to [Main concepts](/library/get-started/main-concepts) to learn all about how Streamlit works.
+跳过安装！ 社区云 + GitHub Codespaces
+Community Cloud 现在可以轻松跳过安装并使用 GitHub Codespaces 直接在浏览器中开始编码。 🎉 跳到我们的社区云快速入门来创建帐户、部署示例应用程序，然后直接跳到代码空间开始编辑。 返回主要概念以了解 Streamlit 的工作原理。
 
 You can edit any app you've deployed on Community Cloud with GitHub Codespaces. See [Edit your app with GitHub Codespaces](/streamlit-community-cloud/manage-your-app/edit-your-app#edit-your-app-with-github-codespaces).
+您可以使用 GitHub Codespaces 编辑在 Community Cloud 上部署的任何应用程序。 请参阅使用 GitHub Codespaces 编辑您的应用程序。
 
 </Note>
 
